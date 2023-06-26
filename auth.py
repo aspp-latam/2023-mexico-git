@@ -41,6 +41,6 @@ if __name__ == '__main__':
     pwdb = read_pwdb()
     user, password = get_credentials()
     check_user(user, password, pwdb)
-
+# 	q
 #    add_user(user, password, pwdb)
 #    write_pwdb(pwdb)
