@@ -21,6 +21,13 @@ def read_pwdb():
 def add_user(user, password, pwdb):
     if user not in pwdb:
         pwdb[user] = password
+    
+    elif user in pwdb:
+        if password == pwdb[user]:
+            print("Successfully aunthenticated!")
+        if password != pwdb[user]:
+            print("Wrong password!")
+
     return pwdb
 
 
