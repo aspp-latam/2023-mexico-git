@@ -18,6 +18,13 @@ def read_pwdb():
         pwdb = {}
     return pwdb
 
+def check_psw(user, password, pwdb):
+    if pwdb[user] == password:
+        print('Successfully authenticated!')
+    else:
+         print('Wrong password!')
+
+
 def add_user(user, password, pwdb):
     if user not in pwdb:
         pwdb[user] = password
@@ -29,3 +36,4 @@ if __name__ == '__main__':
     user, password = get_credentials()
     add_user(user, password, pwdb)
     write_pwdb(pwdb)
+    check_psw(user, password, pwdb)
