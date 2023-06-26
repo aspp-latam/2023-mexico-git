@@ -26,11 +26,11 @@ def add_user(user, password, pwdb):
 def authenticate(user, password, pwdb):
     if user in pwdb:
         if password == pwdb[user]:
-            print("Authentification succesfull")
+            print("Authentification successfull")
         else:
-            print("Authentification failed!! ;(")
+            print("Authentification failed")
     else: 
-        add_user(user,password, pwdb)   
+        add_user(user, password, pwdb)   
 
 
 if __name__ == '__main__':
