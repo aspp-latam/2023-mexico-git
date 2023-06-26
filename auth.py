@@ -23,9 +23,20 @@ def add_user(user, password, pwdb):
         pwdb[user] = password
     return pwdb
 
+def authenticate_user(user, password, pwdb):
+    authenticate  = False
+    while authenticate == False:
+        if pwdb[user] == password:
+            authenticate = True    
+            print("Welcome ", user)
+        else:
+            print("Your password is not correct, try again")  
+            password = input('Type password: ')
+
 
 if __name__ == '__main__':
     pwdb = read_pwdb()
     user, password = get_credentials()
     add_user(user, password, pwdb)
+    authenticate_user(user, password, pwdb)
     write_pwdb(pwdb)
